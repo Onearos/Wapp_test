@@ -26,12 +26,23 @@ Application mobile de prévision météo développée avec Flutter, utilisant :
 Les tests unitaires n'ont pas été implémentés par manque de temps
 L'application affiche les données même sans connexion
 
-## Structure overview
-
+## 🗂 Architecture
+```bash
 lib/
-├── core/          # Code transverse (network, injection)
-├── features/      # Fonctionnalités météo
-│   ├── data       # Sources de données
-│   ├── domain     # Métier et entités
-│   └── presentation # UI et BLoC
-
+│
+├── core/               # Fonctionnalités transverses
+│   ├── network/        # API Client
+│   └── injection/      # DI (GetIt)
+│
+└── features/           # Module météo
+    ├── data/           # Couche données
+    │   ├── datasources # Sources (API + Cache)
+    │   └── models      # DTOs
+    │
+    ├── domain/         # Métier pur
+    │   ├── entities    # Modèles métier
+    │   └── repositories# Contrats
+    │
+    └── presentation/   # UI
+        ├── bloc/       # Gestion d'état
+        └── pages/      # Écrans
