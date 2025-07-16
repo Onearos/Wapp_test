@@ -1,0 +1,14 @@
+
+# Fichiers à ignorer
+/android/
+/ios/
+/build/
+/.dart_tool/
+/.idea/
+/.vscode/
+/.gradle
+/pubspec.lock
+*.iml
+*.lock
+*.log
+
